@@ -1,7 +1,7 @@
 const input_list = document.querySelectorAll("input")
 input_list[0].focus()
 
-const correctAnswer = "NIGGA"
+const correctAnswer = "APPLE"
 
 const popUpWinEl = document.getElementById("win-popup-out")
 const popUpLoseEl = document.getElementById("lose-popup-out")
