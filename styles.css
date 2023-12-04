@@ -22,10 +22,26 @@ body{
 
 .popup{
     background-color: white;
+    min-width: 250px;
+    min-height: 100px;
     width: 30vw;
     height: 30vh;
     align-items: center;
     margin: auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+}
+
+#win-popup{
+    background-color: wheat;
+}
+
+#lose-popup{
+    background-color: wheat;
+}
+
+.popup h1{
+    font-size: 50px;
 }
 
 /* BOARD CSS*/
@@ -45,8 +61,8 @@ body{
 }
 
 #board input{
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     font-size: 40px;
     text-align: center;
     border: 0;

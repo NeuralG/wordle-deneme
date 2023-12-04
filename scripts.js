@@ -1,10 +1,13 @@
 const input_list = document.querySelectorAll("input")
 input_list[0].focus()
 
-const correctAnswer = "APPLE"
+const correctAnswer = "NIGGA"
 
 const popUpWinEl = document.getElementById("win-popup-out")
 const popUpLoseEl = document.getElementById("lose-popup-out")
+
+const answerEl = document.getElementById("answer")
+const attemptCountEl = document.getElementById("attempt-count")
 
 let letterList = []
 
@@ -36,6 +39,7 @@ for (let i=0;i<30;i++){
                             input_list[i-4+a].style.backgroundColor = "green"
                         }
                         popUpWinEl.style.display = "flex"
+                        attemptCountEl.innerText = `You knew the word in ${attemptFinder(i)} attempt!!`
                         break
                     }
                     else{
@@ -66,6 +70,7 @@ for (let i=0;i<30;i++){
                             }else{
                                 console.log("kaybettiniz")
                                 popUpLoseEl.style.display = "flex"
+                                answerEl.innerText = `The answer was: ${correctAnswer}`
                                 break
                             }
                             
@@ -81,6 +86,26 @@ for (let i=0;i<30;i++){
 
 }
 
+const attemptFinder = (i) => (i+1)/5
+
+
+const bodyEl = document.querySelector("body")
+bodyEl.addEventListener("click", function(){
+    for (let i=0;i<30;i++){
+        if (input_list[i].value == ""){
+            input_list[i].focus()
+            break
+        }
+    }
+})
+
+popUpWinEl.addEventListener("click", function(){
+    window.location.href = window.location.href
+})
+
+popUpLoseEl.addEventListener("click", function(){
+    window.location.href = window.location.href
+})
 
 
 
