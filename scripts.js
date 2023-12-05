@@ -1,7 +1,8 @@
 const input_list = document.querySelectorAll("input")
 input_list[0].focus()
 
-const correctAnswer = "APPLE"
+const answerList = ["FEYZA","HALIL","ONURA","UMUDO"]//GET A REAL DICTIONARY ALSO CODE THAT U CAN ONLY ENTER VALID LETTERS IN DICT
+const correctAnswer = answerList[Math.floor(Math.random()*answerList.length)]
 
 const popUpWinEl = document.getElementById("win-popup-out")
 const popUpLoseEl = document.getElementById("lose-popup-out")
@@ -30,7 +31,7 @@ for (let i=0;i<30;i++){
         if ((i+1)%5 != 0 && content ){ //CHANGES FOCUS TO NEXT UNLESS ITS THE LAST LETTER OF A WORD
             input_list[i+1].focus()
         }else{
-            if (content){ //CHECKS THE ANSWER
+            if (content && event.key === "Enter"){ //CHECKS THE ANSWER
                 let myAnswer = `${input_list[i-4].value}${input_list[i-3].value}${input_list[i-2].value}${input_list[i-1].value}${input_list[i].value}`
                 for(let a=0;a<5;a++){
                     if (myAnswer == correctAnswer){
@@ -81,6 +82,15 @@ for (let i=0;i<30;i++){
             }
 
         }
+        }
+    })
+
+    input_list[i].addEventListener("keyup", function(event){
+        if (event.key === "Backspace"){
+            if (event.target.value === "" && (i%5 != 0)){
+                input_list[i-1].value = ""
+            }
+
         }
     })
 
