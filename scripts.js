@@ -115,7 +115,7 @@ for (let i=0;i<30;i++){
     //DELETES PREVIOUS LETTER IF ITS NOT LAST OR FIRST LETTER OF THE WORD
     input_list[i].addEventListener("keyup", function(event){
         if (event.key === "Backspace"){
-            if (event.target.value === "" && (i%5 != 0) && ((i+1%5 != 0))){
+            if (event.target.value === "" && (i%5 != 0) && (((i+1)%5 != 0))){
                 input_list[i-1].value = ""
             }
 
